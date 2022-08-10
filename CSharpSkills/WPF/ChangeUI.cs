@@ -16,7 +16,7 @@ namespace CSharpSkills.WPF
             Thread th = new Thread(ChangeSomething);
             th.Start();
         }
-
+        //
         private void ChangeSomething()
         {
             this.Dispatcher.Invoke(() => {
