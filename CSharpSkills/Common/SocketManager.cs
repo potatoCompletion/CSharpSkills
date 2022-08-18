@@ -136,8 +136,8 @@ namespace Socket {
                     handler(this, e);
             }
 
-            Socket _sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            Socket _clienSock = null;
+            System.Net.Sockets.Socket _sock = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            System.Net.Sockets.Socket _clienSock = null;
             byte[] _buff = new byte[65536];
 
             public SocketServer(int p_port)
@@ -357,7 +357,7 @@ namespace Socket {
             }
 
 
-            Socket _sock = null;
+            System.Net.Sockets.Socket _sock = null;
             IPEndPoint ep = null;
             private string sIP;
             private int sPort;
@@ -373,7 +373,7 @@ namespace Socket {
             {
                 try
                 {
-                    _sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    _sock = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     IAsyncResult result = _sock.BeginConnect(sIP, sPort, null, null);
                     bool success = result.AsyncWaitHandle.WaitOne(5000, true);
 
@@ -408,7 +408,7 @@ namespace Socket {
             {
                 try
                 {
-                    _sock = (Socket)ar.AsyncState;
+                    _sock = (System.Net.Sockets.Socket)ar.AsyncState;
 
                     _sock.EndConnect(ar);
 
@@ -491,7 +491,7 @@ namespace Socket {
 
             private void OnSendCallBack(IAsyncResult ar)
             {
-                _sock = (Socket)ar.AsyncState;
+                _sock = (System.Net.Sockets.Socket)ar.AsyncState;
 
 
                 try
