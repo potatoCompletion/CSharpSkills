@@ -13,7 +13,6 @@ namespace CSharpSkills.Common
     /// </summary>
     public class XpathExample
     {
-        private XmlDocument xmlDoc;
         private HtmlWeb web;
         private HtmlDocument htmlDoc;
         public HtmlNode node;

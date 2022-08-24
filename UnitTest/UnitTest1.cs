@@ -5,7 +5,7 @@ namespace UnitTest
     public class Tests
     {
         [Test]
-        public void Test1()
+        public void 노드테스트()
         {
             XpathExample ex = new XpathExample();
             Console.WriteLine(ex.node.InnerHtml);
