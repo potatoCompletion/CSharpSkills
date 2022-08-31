@@ -12,8 +12,8 @@ namespace DotNet5_Tester
     // 소켓 서버 예제 코드 
     class Program
     {
-        static SocketManager.SocketServer socketServer = null;
-        static Thread thread = null;
+        static SocketManager.SocketServer socketServer;
+        static Thread thread;
         static void Main(string[] args)
         {
 

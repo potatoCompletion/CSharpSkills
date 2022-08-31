@@ -12,7 +12,7 @@ namespace CSharpSkills.Common
         public List<string> SelectList(List<string> originList)
         {
             var selectList = (from str in originList
-                where str == "검색할문자"
+                where str.Contains("검색할문자")
                 orderby str descending  // ascending 가나다순, descending 역순
                 select str)
                 .ToList();
