@@ -11,6 +11,26 @@ namespace CSharpSkills.WPF
         // WPF 에서 UI를 변경하고 싶을 때, UI Thread(WPF에서는 Main Thread)가 아닌 다른 Thread에서 컨트롤의 속성을 변경하면 데이터가 달라져 굉장히 위험한 코드가 된다.
         // 참고 : UI Thread 연동을 위한 팁 - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=neos_rtos&logNo=220759112213
 
+        // 1. SynchronizationContext 이용
+
+        //private readonly SynchronizationContext _syncContext;
+
+        //public ChangeUI()
+        //{
+        //    _syncContext = SynchronizationContext.Current;
+        //}
+        //public void ChangeUiUsingSynchronizeationContext()
+        //{
+            //_syncContext.Post(o =>
+            //{
+            //    uiChangeSomething();
+            //}, null);
+        //}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // 2. Thread 이용
+
         //public void ChangeUIAtAnotherThread()
         //{
         //    Thread th = new Thread(ChangeSomething);
@@ -24,6 +44,8 @@ namespace CSharpSkills.WPF
         //    });
         //    // UI Change 
         //}
+
+
 
     }
 }
