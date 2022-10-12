@@ -33,6 +33,7 @@ namespace CSharpSkills.Common
             var jsonDocument = JsonDocument.Parse(jsonString);
             var jsonElement = jsonDocument.RootElement.GetPropertyExtension("Key")
                 ?.GetPropertyExtension("anotherKey") ?? throw new Exception("this value isn't exist");
+            // ?(null operator)를 이용해서 훨씬 짧고 간편하게 null check 가능
         }
     }
 }
